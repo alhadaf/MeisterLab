@@ -10,17 +10,17 @@ export const genAI = new GoogleGenerativeAI(apiKey || "");
 
 export function getChatModel(systemInstruction?: string) {
   return genAI.getGenerativeModel({
-    model: "gemini-3-flash-preview",
+    model: "gemini-3-pro-preview",
     systemInstruction: systemInstruction,
     generationConfig: {
-      maxOutputTokens: 2000,
+      maxOutputTokens: 8192,
       temperature: 0.7,
     },
   });
 }
 
 export const jsonModel = genAI.getGenerativeModel({
-  model: "gemini-3-flash-preview",
+  model: "gemini-3-pro-preview",
   generationConfig: {
     responseMimeType: "application/json",
     temperature: 0.2,

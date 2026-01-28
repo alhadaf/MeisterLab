@@ -50,6 +50,9 @@ If "[AUTOPILOT MODE ACTIVE]" is present in the prompt:
 2. CONDUCT REAL COMPETITOR ANALYSIS: Identify specific real-world competitors (names, not generic types) relevant to the specified region.
 3. ANALYZE SENTIMENT: Simulate reading Trustpilot/Reddit/G2 reviews. What are people complaining about?
 4. PROVIDE SOURCES: List potential URL sources for this data (even if generated from training data, make them realistic links to competitor sites or forums).
+5. STRICTLY NO HALLUCINATIONS: You MUST use real data. If you cannot find specific data for a niche, provide the most relevant adjacent real data and clearly state it is an estimate.
+6. LOCATION-FOCUSED MARKET SIZING: When calculating TAM/SAM/SOM, you MUST use data specific to the user's target region. Do not use global stats if the user targets a specific city or country. Cite the specific region in your analysis.
+7. REAL DATA BACKUP: Ensure all claims are backed by real-world data points or credible estimates.
 
 Return a JSON object with:
 - ideaType: "tech" | "physical" | "service"
@@ -63,7 +66,7 @@ Return a JSON object with:
 - competitors: { name: string, strength: string, weakness: string, pricePoint: string, source: string }[] 
     (List up to 10 real competitors. 'strength' is their key advantage. 'weakness' is their flaw found in reviews. 'pricePoint' is e.g. "$$ - Premium". 'source' is e.g. "Reddit r/SaaS" or "Trustpilot reviews")
 - marketSize: { tam: string, sam: string, som: string, cagr: string } 
-    (Estimate Total Addressable Market, Serviceable Available Market, Serviceable Obtainable Market, and Compound Annual Growth Rate)
+    (Estimate Total Addressable Market, Serviceable Available Market, Serviceable Obtainable Market, and Compound Annual Growth Rate. MUST be based on REAL data for the specific LOCATION.)
 - customerSegments: { segment: string, description: string, pain: string, willingnessToPay: "High" | "Medium" | "Low", acquisitionChannels: string[] }[] (3 key segments)
 - revenueModel: { model: string, pricingStrategy: string, marginEstimate: string } (e.g. "Subscription", "Freemium", "20-30%")
 - gtmStrategy: { strategy: string, tactics: string[] } (Initial Go-to-Market plan)
