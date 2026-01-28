@@ -1,0 +1,14 @@
+{
+  "tech": [
+    { "name": "David Kim", "expertise": "Startup CTO", "skills": ["Software", "Architecture"] },
+    { "name": "Lisa Wang", "expertise": "Product Strategy", "skills": ["Product", "UX"] }
+  ],
+  "physical": [
+    { "name": "Sarah Chen", "expertise": "Restaurant Consultant", "skills": ["Operations", "Location"] },
+    { "name": "Mike Torres", "expertise": "Location Analytics", "skills": ["Data", "Real Estate"] }
+  ],
+  "service": [
+    { "name": "Tom Anderson", "expertise": "B2B Sales", "skills": ["Sales", "Negotiation"] },
+    { "name": "Rachel Green", "expertise": "Service Design", "skills": ["Design", "Process"] }
+  ]
+}
